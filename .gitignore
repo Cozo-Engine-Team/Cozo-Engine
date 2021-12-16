@@ -1,0 +1,15 @@
+/bin/
+/res/psd
+/.vscode/
+/include/GLFW/
+/lib/
+/SandBox/include/GLFW/
+*.o
+*.exe
+*.dll
+ideas.idea
+imgui.ini
+my.rc
+my.res
+*.sublime-project
+*.sublime-workspace
