@@ -1,7 +1,7 @@
 <div align="center">
 
 [![Use this template](https://img.shields.io/badge/Check-Our_website_here_!-2ea44f?style=for-the-badge)](https://cozo-engine.github.io)
-[![Use this template](https://img.shields.io/badge/Engine's_Documents!-2ea44f?style=for-the-badge)](https://cozo-engine.github.io/docs)
+[![Use this template](https://img.shields.io/badge/Engine's-_Documents!-2ea44f?style=for-the-badge)](https://cozo-engine.github.io/docs)
 
 
 
