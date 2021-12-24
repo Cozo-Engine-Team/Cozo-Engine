@@ -4,19 +4,24 @@
 using namespace Engine;
 
 // Function callback that is called to manage the keyboard taks
-float r = 0.0f;
-float g = 0.0f;
-float b = 0.0f;
+float r = 1.0f;
+float g = 1.0f;
+float b = 1.0f;
+
+HWND hThisWnd;
+LONG lStyle;
+
+int refreshMillis = 16;
 
 Cozo *cozo = new Engine::Cozo;
 Shapes::BaseLines *lines;
-Shapes::Triangle *tri;
+Shapes::Triangle *tri= new Shapes::Triangle;
 Shapes::Square *sqr = new Shapes::Square;
 Shapes::Circle *cir = new Shapes::Circle;
 
-float z = 0.0f;
+float x = 0.0f, y = 0.0f ;
 
-void Keyboard(unsigned char key, int x, int y)
+void keyboard(unsigned char key, int x, int y)
 {
     switch (key) {
 	    case 'a':// change the actual color to red
@@ -30,65 +35,67 @@ void Keyboard(unsigned char key, int x, int y)
 	        b = 1.0f;
 	        break;
 	    case 27:// close the screen
+	        glutDestroyWindow(glutGetWindow());
 	        exit(0);
 	        break;
     }
+    glutSwapBuffers();
     glutPostRedisplay();
-
-	z += 0.1;
-
-	std::cout << z << std::endl;
 }
-void display() {
 
+void display() {
+    glClearColor( 0, 0, 0, 1 );  // (In fact, this is the default.)
 	glClear(GL_COLOR_BUFFER_BIT);
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
 
 	//lines->display();
-	tri->display();
-	sqr->setPos(type_x, -1);
-	sqr->setPos(type_y, -1);
+	//tri->display();
+    glTranslatef(0, 0, 0);
+	sqr->setMainPos(-0.5, -0.5, 0);
 	sqr->display(r,g,b);
 	//glColor3f(1, 1, 1);
 	//cir->display(0.5,0.5,1, 10);
+	glutSwapBuffers();
+}
+void init () {glClearColor(0.0, 0.0, 0.0, 1.0);}
 
-	glFlush();
+void idle ()
+{
+	//SetWindowPos(hThisWnd, NULL, Input::ScreenMousePos(type_x), Input::ScreenMousePos(type_y), WINDOW_WIDTH, WINDOW_HEIGHT,SWP_NOZORDER|SWP_FRAMECHANGED);
+	//ShowWindowAsync(hThisWnd, SW_SHOWMINIMIZED);
+	std::cout << Window::GetWindowPosition(type_x) << "\n";
 }
 
-void init ()
+void timer(int value)
 {
-/*
-	glClearColor(0.1, 0.39, 0.88, 1.0);
-	glColor3f(1.0, 1.0, 1.0);
-
-	glEnable(GL_CULL_FACE);
-	glCullFace(GL_BACK);
-
-	glMatrixMode(GL_PROJECTION);
-	glLoadIdentity();
-	glFrustum(-2, 2, -1.5, 1.5, 1, 40);
-
-	glMatrixMode(GL_MODELVIEW);
-	glLoadIdentity();
-	glTranslatef(0, 0, -3);
-	glRotatef(50, 1, 0, 0);
-	glRotatef(70, 0, 1, 0);
-*/
+	glutPostRedisplay();
+	glutTimerFunc(refreshMillis, timer, 0);
 }
 
 int main(int argc, char** argv) {
+	cozo->glInit(true , argc, argv);
 
-	glutInit(&argc, argv);
-	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
-
-	glutInitWindowPosition( (glutGet(GLUT_SCREEN_WIDTH)-WINDOW_WIDTH)/2,
-                       		(glutGet(GLUT_SCREEN_HEIGHT)-WINDOW_HEIGHT)/2); // the window position
+	initWindow();
+	glutInitWindowPosition(WINDOW_X, WINDOW_Y); // the window position
 	glutInitWindowSize(WINDOW_WIDTH, WINDOW_HEIGHT); // inits a window of size { width , height}
-	glutCreateWindow("Main Functions");
+	glutCreateWindow("Cozo Engine");
 
 	glutDisplayFunc(display);
-    glutKeyboardFunc(Keyboard);
+	glutKeyboardFunc(keyboard);
+	//glutTimerFunc(0, timer, 0);
+	glutIdleFunc(idle);
 	init();
+
+  	hThisWnd = FindWindow( 0, "Cozo Engine" );
+	/*if( hThisWnd )
+	{
+		lStyle = GetWindowLong( hThisWnd, GWL_STYLE );
+		SetWindowLong( hThisWnd, GWL_STYLE, lStyle & 
+			(~(WS_MAXIMIZEBOX|WS_MINIMIZEBOX|WS_SYSMENU|WS_CAPTION|WS_BORDER ) ) );-
+	}*/
+
+	glutSetIconTitle("patata");
 
 	glutMainLoop();
 }
-

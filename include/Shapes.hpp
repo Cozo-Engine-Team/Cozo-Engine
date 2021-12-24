@@ -17,6 +17,15 @@ namespace Engine
 
 	namespace Shapes
 	{
+		class Colors
+		{
+		public:
+			// Colors
+			static constexpr GLfloat WHITE[] = {1, 1, 1};
+			static constexpr GLfloat RED[] = {1, 0, 0};
+			static constexpr GLfloat GREEN[] = {0, 1, 0};
+			static constexpr GLfloat MAGENTA[] = {1, 0, 1};
+		};
 
 		// damn are you reading this? ... I though that no one will know about this game engine ...
 		class BaseLines{
@@ -30,8 +39,6 @@ namespace Engine
 		class Circle{
 			public:
 				void display(GLfloat x, GLfloat y, GLfloat radius, int slices); //draws the circle .. Shapes.cpp
-
-			private:
 		};
 		class Square{
 			public:
@@ -46,17 +53,39 @@ namespace Engine
 					z = z_pos;
 				}
 				void display(float c_r, float c_g, float c_b);
+				
 			private:
-				float x = -0.5f;
-				float y = -0.5f;
-				float z = -1.0f;
-				float w = 0.5f;
-				float h = 0.5f;
+				float x = -0.0f;
+				float y = -0.0f;
+				float z = -0.0f;
+				float w = 0.2f;
+				float h = 0.2f;
 			};
 		class Triangle{
 			public:
 				void display();
+
 			private:
+				float x = -0.6f;
+				float y = -0.75f;
+				float z = -1.0f;
+				float w = 0.5f;
+				float h = 0.5f;
 		};
 	}
+	class Camera {
+		double theta;      // determines the x and z positions
+		double y;          // the current y position
+		double dTheta;     // increment in theta for swinging the camera around
+		double dy;         // increment in y for moving the camera up/down
+	public:
+		Camera(): theta(0), y(3), dTheta(0.04), dy(0.2) {}
+		double getX() {return 10 * cos(theta);}
+		double getY() {return y;}
+		double getZ() {return 10 * sin(theta);}
+		void moveRight() {theta += dTheta;}
+		void moveLeft() {theta -= dTheta;}
+		void moveUp() {y += dy;}
+		void moveDown() {if (y > dy) y -= dy;}
+	};
 }

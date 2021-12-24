@@ -1,14 +1,26 @@
 #include "Engine.hpp"
 
 // COZO FUNCTIONS HERE
-void Engine::Cozo::cozoInit(bool display, int argc, char **argv)
+void Engine::Cozo::glInit(bool display, int argc, char **argv)
 {
 	//  Initialize GLUT and process user parameters
-	glutInit(&argc,argv);
+	glutInit(&argc, argv);
 
 	//  Request double buffered true color window with Z-buffer
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
 }
+
+void Engine::Cozo::init()
+{
+
+}
+
+
+void Engine::Cozo::display()
+{
+
+}
+
 
 void Engine::Cozo::setStyle(){
 

@@ -1,0 +1,2 @@
+@echo off 
+g++ -c C:/GL/IMGUI/*.cpp  -c C:/GL/IMGUI/backends/imgui_impl_glut.cpp -c src/*.cpp -std=c++17 -g -Wall -m32 -I include -I C:/SDL2-w64/include -I C:/GL/GLFW/include -I C:/GL/GLEW/include/GL -I C:/GL/GLUT/include/GL -I C:/GL/GLUT/include -I C:/GL/IMGUI -I C:/GL/IMGUI/backends && g++ *.o -o bin/debug/main -L C:/SDL2-w64/lib -L C:/GL/GLEW/bin/Release/Win32 -L C:/GL/GLUT/lib/ -L C:/GL/GLFW/lib-mingw-w64 -lglfw3 -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lglew32 -lopengl32 -lglu32 -lfreeglut -lUser32 -lGdi32 -lShell32 -D GLEW_STATIC && start bin/debug/main
