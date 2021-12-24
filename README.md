@@ -11,11 +11,12 @@
 
 # Cozo-Engine
 ## What is Cozo Engine?
-Cozo Engine is an open source Game Engine that i'm currently working on :eyes:
-There is not much in the engine but i hope it will get better
+Cozo Engine is an open source Game Engine that we'er currently working on :eyes:
+There is not much in the engine but i hope it will get better.
+We're using c++ and opengl (glut) to make this engine!
 
 ## Any Plans?
-Well yes, as i said I'm currently working on it.
+Well yes, as we said, we're currently working on it, I will put some <todo's> here later.
 
 
 <!---
