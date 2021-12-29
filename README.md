@@ -8,6 +8,9 @@
 </div>
 
 
+![logo_cozoEngine_banner](https://user-images.githubusercontent.com/86025456/147656017-f442c3e7-ff6a-47e2-bbef-57fae57beadc.png)
+
+
 
 # Cozo-Engine
 ## What is Cozo Engine?
@@ -20,6 +23,7 @@ Well yes, as we said, we're currently working on it, I will put some <todo's> he
 
 ## Licensing
 This game engine is under the MIT license.
+
 
 | Permissions       | Limitations   |
 |-------------------|---------------|
