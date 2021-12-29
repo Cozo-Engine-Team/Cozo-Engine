@@ -18,12 +18,22 @@ We're using c++ and opengl (glut) to make this engine!
 ## Any Plans?
 Well yes, as we said, we're currently working on it, I will put some <todo's> here later.
 
+## Licensing
+This game engine is under the MIT license.
+
+| Permissions       | Limitations   |
+|-------------------|---------------|
+| ✔️ Commercial use | ❌ Liability |
+| ✔️ Modification   |————————|
+| ✔️ Distribution   | ❌ Warranty  |
+| ✔️ Private use    |————————|
 
 <!---
 Cozo-Engine/Cozo-Engine is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 You can click the Preview link to take a look at your changes.
 github, what?
 --->
+
 <br><br><br>
 ## Stuff about the Engine
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Cozo-Engine)
