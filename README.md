@@ -9,14 +9,6 @@
 
 </div>
 
-
-<<<<<<< HEAD
-=======
-![logo_cozoEngine_banner](https://user-images.githubusercontent.com/86025456/147656017-f442c3e7-ff6a-47e2-bbef-57fae57beadc.png)
-
-
-
->>>>>>> 5deb1d6d5151d52786d92b23ac9bbea9ad73af7b
 # Cozo-Engine
 
 ![logo_cozoEngine_banner](https://user-images.githubusercontent.com/86025456/147656017-f442c3e7-ff6a-47e2-bbef-57fae57beadc.png)
