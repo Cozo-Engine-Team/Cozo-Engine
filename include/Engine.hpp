@@ -25,6 +25,7 @@
 #include <Shapes.hpp>
 #include <Input.hpp>
 #include <Window.hpp>
+#include <Camera.hpp>
 
 namespace Engine
 {
@@ -33,11 +34,6 @@ namespace Engine
 
 	static int WINDOW_X = 0;
 	static int WINDOW_Y = 0;
-
-	static void initWindow() {
-		WINDOW_X = (glutGet(GLUT_SCREEN_WIDTH)-WINDOW_WIDTH)/2;
-		WINDOW_Y = (glutGet(GLUT_SCREEN_HEIGHT)-WINDOW_HEIGHT)/2;
-	}
 
 	class Cozo
 	{

@@ -14,6 +14,7 @@ LONG lStyle;
 int refreshMillis = 16;
 
 Cozo *cozo = new Engine::Cozo;
+Camera *camera = new Camera;
 Shapes::BaseLines *lines;
 Shapes::Triangle *tri= new Shapes::Triangle;
 Shapes::Square *sqr = new Shapes::Square;
@@ -34,6 +35,10 @@ void keyboard(unsigned char key, int x, int y)
 	        g = 0.0f;
 	        b = 1.0f;
 	        break;
+	    //case GLUT_KEY_LEFT: camera->moveLeft(); break;
+	    //case GLUT_KEY_RIGHT: camera->moveRight(); break;
+	    //case GLUT_KEY_UP: camera->moveUp(); break;
+	    //case GLUT_KEY_DOWN: camera->moveDown(); break;
 	    case 27:// close the screen
 	        glutDestroyWindow(glutGetWindow());
 	        exit(0);
@@ -58,7 +63,10 @@ void display() {
 	//cir->display(0.5,0.5,1, 10);
 	glutSwapBuffers();
 }
-void init () {glClearColor(0.0, 0.0, 0.0, 1.0);}
+
+void init () {
+	glClearColor(0.0, 0.0, 0.0, 1.0);
+}
 
 void idle ()
 {
